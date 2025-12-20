@@ -127,10 +127,34 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
+@media screen and (max-width: 768px) {
+    .container-content .judul h2 {
+        font-size: 30px;
+    }
+
+    .container-content h4 {
+        font-size: 16px;
+        padding-left: 20px;
+    }
+}
+
 #about {
     background: linear-gradient(90deg, #051035, rgb(19, 54, 95), #051035);
     padding: 50px 0;
     height: 600px;
+}
+
+@media screen and (max-width: 1200px) {
+    #about {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #about {
+        height: auto;
+    }
+    
 }
 
 #about .teks {
@@ -168,6 +192,23 @@ nav ul li a:hover {
     border-radius: 22px;
     transition: all 0.3s ease;
     color: #00d5e4;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    .card {
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-cards {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .card {
+        height: 210px;
 }
 
 .card:hover {
