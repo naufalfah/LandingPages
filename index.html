@@ -14,7 +14,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#kemampuan">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -29,7 +29,7 @@
             <div class="b">
                 <a href="#about">
                     <div>
-                        <h3>Lihat Perjalananku →</h3> 
+                        <h3>Lihat Perjalananku   →</h3> 
                     </div>
                 </a>
             </div>
@@ -44,14 +44,14 @@
             </div>
         </div>
         <div class="container-cards">
-            <div class="card">
+            <div class="card from-left">
                 <h4>Tentang Aku</h4>
                 <div class="iden">
                     <p>Nama saya adalah Muhammad Naufal Fahrezi. Saya disini sedang mempelajari pemrograman web.
                          Supaya kedepannya saya lebih bisa untuk membuat aplikasi dan website yang interaktif dan menarik.</p>
                 </div>
             </div>
-            <div class="card">
+            <div class="card from-right">
                 <h4>Perjalanan Belajar</h4>
                 <div class="hobi">
                     <p>Saya mulai belajar pemrograman web saat saya kelas 9 SMP, saya dapat sedikit pengetahuan
@@ -59,14 +59,14 @@
                           website sederhana menggunakan HTML dan CSS.</p>
                 </div>
             </div>
-            <div class="card">
+            <div class="card from-left">
                 <h4>Projek</h4>
                 <div class="keahlian">
                     <p>Saya mempunyai sebuah projek kecil - kecilan yaitu Landing Page sederhana yang saya buat sendiri.
                          Disini saya belajar bagaimana membuat tampilan yang menarik dan interaktif menggunakan HTML dan CSS.</p>
                 </div>
             </div>
-            <div class="card">
+            <div class="card from-right">
                 <h4>Fun Facts</h4>
                 <div class="contact">
                     <p>Saya suka sekali dengan hal - hal yang berbau teknologi, terutama pemrograman. Selain itu saya juga
@@ -75,5 +75,47 @@
             </div>
         </div>
     </section>
+
+    <section id="kemampuan">
+        <div class="skills">
+            <h2>My Skills</h2>
+            <p>Ini adalah progress saya yang saya lakukan dalam 1 tahun terakhir dalam mempelajari pemrograman</p>
+            <div class="skill">
+                <span>HTML & CSS</span>
+                <div class="progress">
+                <div class="progress-bar html-css">70%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>JavaScript</span>
+                <div class="progress">
+                <div class="progress-bar javascript">10%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>Python</span>
+                <div class="progress">
+                <div class="progress-bar python">40%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+
+        window.addEventListener('scroll', () => {
+            const triggerPoint = window.innerHeight * 0.85;
+
+            cards.forEach(card => {
+            const cardTop = card.getBoundingClientRect().top;
+
+            if (cardTop < triggerPoint) {
+                card.classList.add('show');
+            }
+            });
+        });
+    </script>
 </body>
 </html>
