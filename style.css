@@ -1,0 +1,13 @@
+body {
+  font-family: sans-serif:
+  margin: 0;
+}
+
+h1 {
+  color: blue;
+  transition: all 0.3s ease;
+}
+
+h1:hover {
+  transform: translateY(20px);
+}
