@@ -84,6 +84,7 @@ nav ul li a {
 @media screen and (max-width: 767px) {
     nav .container-nav {
         width: 90%;
+        padding: 12px;
     }
 
     nav ul {
@@ -111,10 +112,6 @@ nav ul li a {
 
     nav ul li a:hover {
         color: #ffffff;
-        box-shadow: 0 10px 6px rgba(0, 0, 0, 0.3);
-        /* padding: 12px 10px;
-        background-color: #0a1f61;
-        border-radius: 20px; */
     }
 }
 
@@ -505,7 +502,7 @@ nav ul li a {
 
 @media screen and (max-width: 768px) {
     .social-section {
-        height: 500px;
+        height: auto;
     }
 
     .social-section .hah h2 {
@@ -513,8 +510,16 @@ nav ul li a {
         font-weight: 800;
     }
 
+    .social-card {
+        width: 80%;
+    }
+
+    .social-card a .username {
+        padding-left: 20px;
+    }
+
     .social-section .hah p {
-        font-size: 16px;
+        font-size: 12px;
         margin-bottom: 40px;
     }
 
@@ -539,5 +544,6 @@ footer {
     footer p {
         font-size: 14px;
         margin: 0 10px;
+        padding: 12px;
     }
 }
