@@ -91,7 +91,7 @@ nav ul li a:hover {
     padding: 200px 0;
 }
 
-.container-content .judul h2 {
+.container-content h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     justify-content: center;
     display: flex;
@@ -101,12 +101,6 @@ nav ul li a:hover {
     transition: all 0.3s ease;
     color: rgba(255, 255, 255, 0.849);
     margin-bottom: 10px;
-}
-
-.container-content .judul h2:hover {
-    transform: translateY(-10px);
-    transform: scale(1.1);
-    color: #ffffff;
 }
 
 .container-content h4 {
@@ -209,7 +203,7 @@ nav ul li a:hover {
 
 .card {
     height: 160px;
-    background: linear-gradient(0deg, rgb(47, 47, 141), rgb(84, 84, 161));
+    background: linear-gradient(0deg, rgb(19, 52, 95), rgb(47, 86, 141));
     border-radius: 22px;
     transition: all 0.3s ease;
     color: #ffffffe7;
@@ -245,9 +239,15 @@ nav ul li a:hover {
     }
 }
 
-.card:hover {
+.card.from-left:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.50);
+    color: rgb(255, 255, 255);
+}
+
+.card.from-right:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.50);
     color: rgb(255, 255, 255);
 }
 
@@ -333,7 +333,7 @@ nav ul li a:hover {
 .skill {
     max-width: 1000px;
     margin: 0 auto 25px;
-    transition: all 0.3s ease;
+    transition: all 0.8s cubic-bezier(0.1, 0.42, 0.41, 1);
 }
 
 .skill span {
@@ -355,25 +355,35 @@ nav ul li a:hover {
 
 .progress-bar {
     height: 100%;
+    width: 0%;
     text-align: right;
     padding-right: 10px;
     font-size: 12px;
     line-height: 20px;
     border-radius: 20px;
     color: white;
+    transition: width 0.8s cubic-bezier(0.1, 0.42, 0.41, 1);
 }
 
-.html-css {
-    width: 70%;
+.html-css {  
     background: linear-gradient(90deg, #38bdf8, #2563eb);
 }
 
 .javascript {
-    width: 10%;
     background: linear-gradient(90deg, #facc15, #ca8a04);
 }
 
 .python {
-    width: 40%;
     background: linear-gradient(90deg, #22c55e, #15803d);
+}
+
+.hah {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.hah.show {
+    opacity: 1;
+    transform: translateY(0);
 }
