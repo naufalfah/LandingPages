@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar Fixed -->
     <nav>
         <div class="container-nav">
             <h1>NopalzCreations</h1>
@@ -15,15 +14,17 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#kemampuan">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#sosial">Sosial</a></li>
             </ul>
         </div>
     </nav>
 
     <section class="hero" id="home">
         <div class="container-content">
-            <h2>Muhammad Naufal Fahrezi</h2>
-            <h4>Seorang pelajar umur 16 tahun yang baru memulai perjalanan dalam dunia pemrograman</h4>
+            <div class="judul">
+                <h2>Muhammad Naufal Fahrezi</h2>
+                <h4>Seorang pelajar umur 16 tahun yang baru memulai perjalanan dalam dunia pemrograman</h4>
+            </div>
             <div class="b">
                 <a href="#about">
                     <div>
@@ -102,6 +103,47 @@
             </div>
         </div>
     </section>
+    <section id="sosial" class="social-section">
+        <div class="hah">
+            <h2>Sosial</h2>
+            <p>Ini adalah sosial media saya, silahkan di follow ya!</p>
+        </div>
+        
+        <div class="social-container">
+            <div class="social-card">
+                <a href="https://www.instagram.com/znznopal_/">
+                    <span class="platform-name">
+                        <img src="IG.png" alt="INSTAGRAM">
+                    </span>
+                    <span class="username">@znznopal_</span>
+                </a>
+            </div>
+
+            <div class="social-card">
+                <a href="https://www.tiktok.com/@plz_bdg">
+                    <span class="platform-name">
+                        <img src="social-media.png" alt="TIKTOK">
+                    </span>
+                    <span class="username">@plz_bdg</span>
+                </a>
+            </div>
+
+            <div class="social-card">
+                <a href="https://www.youtube.com/@Palzuu">
+                    <span class="platform-name">
+                        <img src="youtube.png" alt="YOUTUBE">
+                    </span>
+                    <span class="username">@Palzuu</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 NopalzCreations. All rights reserved.</p>
+        </div>
+    </footer>
 
 
     <script>
@@ -115,6 +157,21 @@
 
             if (cardTop < triggerPoint) {
                 card.classList.add('show');
+            }
+            });
+        });
+    </script>
+    <script>
+        const socialCards = document.querySelectorAll('.social-card');
+
+        window.addEventListener('scroll', () => {
+            const triggerPoint = window.innerHeight * 0.85;
+
+            socialCards.forEach(socialCard => {
+            const cardTop = socialCard.getBoundingClientRect().top;
+
+            if (cardTop < triggerPoint) {
+                socialCard.classList.add('show');
             }
             });
         });
