@@ -22,9 +22,7 @@
 
     <section class="hero" id="home">
         <div class="container-content">
-            <div class="judul">
-                <h2>Muhammad Naufal Fahrezi</h2>
-            </div>
+            <h2>Muhammad Naufal Fahrezi</h2>
             <h4>Seorang pelajar umur 16 tahun yang baru memulai perjalanan dalam dunia pemrograman</h4>
             <div class="b">
                 <a href="#about">
@@ -39,8 +37,10 @@
     <section id="about">
         <div class="teks">
             <div class="info">
-                <h2>About Me</h2>
-                <p>Ini adalah informasi mengenai saya</p>
+                <div class="hah">
+                    <h2>About Me</h2>
+                    <p>Ini adalah informasi mengenai saya</p>
+                </div>
             </div>
         </div>
         <div class="container-cards">
@@ -78,24 +78,26 @@
 
     <section id="kemampuan">
         <div class="skills">
-            <h2>My Skills</h2>
-            <p>Ini adalah progress saya yang saya lakukan dalam 1 tahun terakhir dalam mempelajari pemrograman</p>
+            <div class="hah">
+                <h2>My Skills</h2>
+                <p>Ini adalah progress saya yang saya lakukan dalam 1 tahun terakhir dalam mempelajari pemrograman</p>
+            </div>
             <div class="skill">
                 <span>HTML & CSS</span>
                 <div class="progress">
-                <div class="progress-bar html-css">70%</div>
+                <div class="progress-bar html-css" data-value="70%">70%</div>
                 </div>
             </div>
             <div class="skill">
                 <span>JavaScript</span>
                 <div class="progress">
-                <div class="progress-bar javascript">10%</div>
+                <div class="progress-bar javascript" data-value="10%">10%</div>
                 </div>
             </div>
             <div class="skill">
                 <span>Python</span>
                 <div class="progress">
-                <div class="progress-bar python">40%</div>
+                <div class="progress-bar python" data-value="40%">40%</div>
                 </div>
             </div>
         </div>
@@ -116,6 +118,45 @@
             }
             });
         });
+    </script>
+    <script>
+        const judul = document.querySelectorAll('.hah');
+
+        window.addEventListener('scroll', () => {
+            const triggerPoint = window.innerHeight * 0.85;
+
+            judul.forEach(judul => {
+            const cardTop = judul.getBoundingClientRect().top;
+
+            if (cardTop < triggerPoint) {
+                judul.classList.add('show');
+            }
+            });
+        });
+    </script>
+    <script>
+    const observerOptions = {
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const progressBar = entry.target;
+            // Ambil nilai dari data-value dan pasang ke lebar elemen
+            const value = progressBar.getAttribute('data-value');
+            progressBar.style.width = value;
+            
+            // Opsional: berhenti mengamati setelah animasi jalan sekali
+            observer.unobserve(progressBar);
+        }
+        });
+    }, observerOptions);
+
+    // Mulai mengamati semua element dengan class .progress-bar
+    document.querySelectorAll('.progress-bar').forEach(bar => {
+        observer.observe(bar);
+    });
     </script>
 </body>
 </html>
