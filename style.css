@@ -116,6 +116,7 @@ nav ul li a {
 }
 
 .hero {
+    height: 700px;
     width: 100%;
     background: linear-gradient(0deg, #061c96, #8291ac);
 }
